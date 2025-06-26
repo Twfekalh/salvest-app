@@ -143,8 +143,14 @@ class _SalvestAppState extends State<SalvestApp> {
         BlocProvider(create: (context) => SalePropertyBloc()),
         BlocProvider(
           create:
+              (context) => LargestRewardBloc(getIt.get<LargestRewardRepoImpl>()),
+        ),
+          BlocProvider(
+          create:
               (context) => SendPropertyBloc(getIt.get<SalePropertyRepoImpl>()),
         ),
+        
+
         BlocProvider(
           create: (context) => WalletBloc(getIt.get<WalletServicesRepoImpl>()),
         ),

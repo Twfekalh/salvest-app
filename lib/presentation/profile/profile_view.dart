@@ -1,14 +1,223 @@
+// import 'package:flutter/material.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:go_router/go_router.dart';
+// import 'package:intl/intl.dart';
+// import 'package:salvest_app/constants.dart';
+// import 'package:salvest_app/presentation/profile/widgets/profile_info_row.dart';
+// import 'package:salvest_app/utility/app_assests.dart';
+// import 'package:salvest_app/utility/app_colors.dart';
+
+// class ProfileView extends StatelessWidget {
+//   const ProfileView({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: AppColors.white,
+//       appBar: AppBar(
+//         leading: IconButton(
+//           icon: const Icon(Icons.arrow_back_ios),
+//           onPressed: () {
+//             GoRouter.of(context).pop();
+//           },
+//         ),
+//         title: const Text(
+//           'Profile',
+//           style: TextStyle(color: Colors.black, fontSize: 18),
+//         ),
+//         centerTitle: true,
+//         backgroundColor: Colors.white,
+//         elevation: 0,
+//       ),
+//       body: Column(
+//         crossAxisAlignment: CrossAxisAlignment.center,
+
+//         children: [
+//           Padding(
+//             padding: const EdgeInsets.only(left: 48.0),
+//             child: Row(
+//               spacing: 35,
+//               children: [
+//                 Column(
+//                   crossAxisAlignment: CrossAxisAlignment.center,
+//                   mainAxisAlignment: MainAxisAlignment.center,
+//                   // alignment: Alignment.topCenter,
+//                   // clipBehavior: Clip.none,
+//                   children: [
+//                     Padding(
+//                       padding: const EdgeInsets.only(right: 16.0),
+//                       child: _buildCrownWidget('platinum'),
+//                     ),
+
+//                     // 👤 Profile initials badg
+//                     Container(
+//                       width: 103,
+//                       height: 103,
+//                       decoration: ShapeDecoration(
+//                         color: const Color(0x669A8AEC),
+//                         shape: OvalBorder(
+//                           side: BorderSide(
+//                             width: 4,
+//                             color: const Color(0xFF836DF3),
+//                           ),
+//                         ),
+//                       ),
+//                       child: Center(
+//                         child: Text(
+//                           getInitials(name!),
+//                           style: const TextStyle(
+//                             color: Colors.black,
+//                             fontSize: 36,
+//                             fontFamily: 'Inter',
+//                             fontWeight: FontWeight.w500,
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+
+//                 Column(
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   children: [
+//                     SizedBox(height: 60),
+//                     Text(
+//                       name!,
+//                       style: TextStyle(
+//                         color: Colors.black,
+//                         fontSize: 20,
+//                         fontFamily: 'Inter',
+//                         fontWeight: FontWeight.w600,
+//                       ),
+//                     ),
+//                     Text(
+//                       formatJoinedDate(joinDate!),
+//                       style: TextStyle(
+//                         color: Colors.black.withValues(alpha: 135),
+//                         fontSize: 13,
+//                         fontFamily: 'Inter',
+//                         fontWeight: FontWeight.w500,
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ),
+//           SizedBox(height: 30),
+//           Container(
+//             width: 349,
+//             height: 217,
+//             decoration: ShapeDecoration(
+//               color: const Color(0x3F9A8AEC),
+//               shape: RoundedRectangleBorder(
+//                 side: BorderSide(width: 3, color: const Color(0xFF836DF3)),
+//                 borderRadius: BorderRadius.circular(20),
+//               ),
+//             ),
+//             child: Padding(
+//               padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
+//               child: Column(
+//                 children: [
+//                   ProfileInfoRow(
+//                     icon: AppAssets.messageIcon,
+//                     text: email!,
+//                     onTap: () {},
+//                   ),
+//                   SizedBox(height: 10),
+//                   ProfileInfoRow(
+//                     icon: AppAssets.phoneIcon,
+//                     text: phone!,
+//                     onTap: () {},
+//                   ),
+//                 ],
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   String formatJoinedDate(String isoDate) {
+//     try {
+//       // Parse the ISO date string into a DateTime object
+//       DateTime date = DateTime.parse(isoDate);
+
+//       // Format the date as "d MMMM yyyy" (e.g., "14 April 2025")
+//       String formattedDate = DateFormat('d MMMM yyyy').format(date);
+
+//       return 'joined in $formattedDate';
+//     } catch (e) {
+//       // Fallback if parsing fails
+//       return 'joined in Unknown date';
+//     }
+//   }
+
+//   String getInitials(String fullName) {
+//     if (fullName.isEmpty) return "";
+
+//     List<String> parts =
+//         fullName.trim().split(' ').where((s) => s.isNotEmpty).toList();
+
+//     String firstInitial = parts.isNotEmpty ? parts.first[0] : '';
+//     String lastInitial = parts.length > 1 ? parts.last[0] : '';
+
+//     return (firstInitial + lastInitial).toUpperCase();
+//   }
+// }
+
+// Widget _buildCrownWidget(String tier) {
+//   Color crownColor;
+
+//   switch (tier.toLowerCase()) {
+//     case 'silver':
+//       crownColor = const Color(0xFFC0C0C0); // Silver
+//       break;
+//     case 'gold':
+//       crownColor = const Color(0xFFFFD700); // Gold
+//       break;
+//     case 'platinum':
+//       crownColor = const Color(0xFFB0E0E6); // Platinum
+//       break;
+//     default:
+//       crownColor = Colors.grey;
+//   }
+
+//   return Icon(
+//     FontAwesomeIcons.crown, // Trophy icon as placeholder crown
+//     color: crownColor,
+//     size: 80,
+//   );
+// }
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:salvest_app/business_logic/largest%20reward%20bloc/largest_reward_bloc.dart';
+import 'package:salvest_app/business_logic/largest%20reward%20bloc/largest_reward_event.dart';
+import 'package:salvest_app/business_logic/largest%20reward%20bloc/largest_reward_state.dart';
+
 import 'package:salvest_app/constants.dart';
-import 'package:salvest_app/presentation/profile/widgets/profile_info_row.dart';
 import 'package:salvest_app/utility/app_assests.dart';
 import 'package:salvest_app/utility/app_colors.dart';
+import 'package:salvest_app/presentation/profile/widgets/profile_info_row.dart';
 
-class ProfileView extends StatelessWidget {
+class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
+
+  @override
+  State<ProfileView> createState() => _ProfileViewState();
+}
+
+class _ProfileViewState extends State<ProfileView> {
+  @override
+  void initState() {
+    super.initState();
+    // نرسل الحدث لجلب أكبر مكافأة عند بدء الشاشة
+    context.read<LargestRewardBloc>().add(FetchLargestRewardEvent());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +226,7 @@ class ProfileView extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            GoRouter.of(context).pop();
-          },
+          onPressed: () => GoRouter.of(context).pop(),
         ),
         title: const Text(
           'Profile',
@@ -29,164 +236,195 @@ class ProfileView extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            _buildProfileHeader(),
+            const SizedBox(height: 30),
+            _buildContactCard(),
+            const SizedBox(height: 40),
+            _buildLargestRewardSection(),
+          ],
+        ),
+      ),
+    );
+  }
 
+  Widget _buildProfileHeader() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 48.0, top: 24),
+      child: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 48.0),
-            child: Row(
-              spacing: 35,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  // alignment: Alignment.topCenter,
-                  // clipBehavior: Clip.none,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 16.0),
-                      child: _buildCrownWidget('platinum'),
-                    ),
-
-                    // 👤 Profile initials badg
-                    Container(
-                      width: 103,
-                      height: 103,
-                      decoration: ShapeDecoration(
-                        color: const Color(0x669A8AEC),
-                        shape: OvalBorder(
-                          side: BorderSide(
-                            width: 4,
-                            color: const Color(0xFF836DF3),
-                          ),
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          getInitials(name!),
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 36,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 16.0),
+                child: _buildCrownWidget('platinum'),
+              ),
+              const SizedBox(height: 12),
+              Container(
+                width: 103,
+                height: 103,
+                decoration: ShapeDecoration(
+                  color: const Color(0x669A8AEC),
+                  shape: OvalBorder(
+                    side: BorderSide(width: 4, color: const Color(0xFF836DF3)),
+                  ),
                 ),
-
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: 60),
-                    Text(
-                      name!,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w600,
-                      ),
+                child: Center(
+                  child: Text(
+                    getInitials(name ?? ''),
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 36,
+                      fontWeight: FontWeight.w500,
                     ),
-                    Text(
-                      formatJoinedDate(joinDate!),
-                      style: TextStyle(
-                        color: Colors.black.withValues(alpha: 135),
-                        fontSize: 13,
-                        fontFamily: 'Inter',
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          SizedBox(height: 30),
-          Container(
-            width: 349,
-            height: 217,
-            decoration: ShapeDecoration(
-              color: const Color(0x3F9A8AEC),
-              shape: RoundedRectangleBorder(
-                side: BorderSide(width: 3, color: const Color(0xFF836DF3)),
-                borderRadius: BorderRadius.circular(20),
+          const SizedBox(width: 35),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 60),
+              Text(
+                name ?? '',
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
-              child: Column(
-                children: [
-                  ProfileInfoRow(
-                    icon: AppAssets.messageIcon,
-                    text: email!,
-                    onTap: () {},
-                  ),
-                  SizedBox(height: 10),
-                  ProfileInfoRow(
-                    icon: AppAssets.phoneIcon,
-                    text: phone!,
-                    onTap: () {},
-                  ),
-                ],
+              const SizedBox(height: 10),
+              Text(
+                formatJoinedDate(joinDate ?? ''),
+                style: TextStyle(
+                  color: Colors.black.withOpacity(0.53),
+                  fontSize: 13,
+                ),
               ),
-            ),
+            ],
           ),
         ],
       ),
     );
   }
 
+  Widget _buildContactCard() {
+    return Container(
+      width: 349,
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      decoration: ShapeDecoration(
+        color: const Color(0x3F9A8AEC),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(width: 3, color: const Color(0xFF836DF3)),
+          borderRadius: BorderRadius.circular(20),
+        ),
+      ),
+      child: Column(
+        children: [
+          ProfileInfoRow(
+            icon: AppAssets.messageIcon,
+            text: email ?? '',
+            onTap: () {},
+          ),
+          const SizedBox(height: 10),
+          ProfileInfoRow(
+            icon: AppAssets.phoneIcon,
+            text: phone ?? '',
+            onTap: () {},
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLargestRewardSection() {
+    return BlocBuilder<LargestRewardBloc, LargestRewardState>(
+      builder: (context, state) {
+        if (state is LargestRewardLoading) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (state is LargestRewardError) {
+          return Center(
+            child: Text(
+              'Error: ${state.message}',
+              style: const TextStyle(color: Colors.red),
+            ),
+          );
+        }
+        if (state is LargestRewardLoaded) {
+          final reward = state.reward;
+          return Column(
+            children: [
+              Text(
+                'أكبر مكافأة',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.darkGreen,
+                ),
+              ),
+              const SizedBox(height: 16),
+              _buildCrownWidget(reward.level ?? ''),
+              const SizedBox(height: 8),
+              Text(
+                '${reward.amountProfit} \$',
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                reward.level ?? '',
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          );
+        }
+        return const SizedBox(); // الحالة الأولية
+      },
+    );
+  }
+
+  // --- الوظائف المساعدة ---
   String formatJoinedDate(String isoDate) {
     try {
-      // Parse the ISO date string into a DateTime object
       DateTime date = DateTime.parse(isoDate);
-
-      // Format the date as "d MMMM yyyy" (e.g., "14 April 2025")
-      String formattedDate = DateFormat('d MMMM yyyy').format(date);
-
-      return 'joined in $formattedDate';
-    } catch (e) {
-      // Fallback if parsing fails
+      return 'joined in ${DateFormat('d MMMM yyyy').format(date)}';
+    } catch (_) {
       return 'joined in Unknown date';
     }
   }
 
   String getInitials(String fullName) {
-    if (fullName.isEmpty) return "";
-
-    List<String> parts =
-        fullName.trim().split(' ').where((s) => s.isNotEmpty).toList();
-
-    String firstInitial = parts.isNotEmpty ? parts.first[0] : '';
-    String lastInitial = parts.length > 1 ? parts.last[0] : '';
-
-    return (firstInitial + lastInitial).toUpperCase();
-  }
-}
-
-Widget _buildCrownWidget(String tier) {
-  Color crownColor;
-
-  switch (tier.toLowerCase()) {
-    case 'silver':
-      crownColor = const Color(0xFFC0C0C0); // Silver
-      break;
-    case 'gold':
-      crownColor = const Color(0xFFFFD700); // Gold
-      break;
-    case 'platinum':
-      crownColor = const Color(0xFFB0E0E6); // Platinum
-      break;
-    default:
-      crownColor = Colors.grey;
+    final parts = fullName.trim().split(' ');
+    if (parts.isEmpty) return '';
+    final first = parts.first.isNotEmpty ? parts.first[0] : '';
+    final last = parts.length > 1 && parts.last.isNotEmpty ? parts.last[0] : '';
+    return (first + last).toUpperCase();
   }
 
-  return Icon(
-    FontAwesomeIcons.crown, // Trophy icon as placeholder crown
-    color: crownColor,
-    size: 80,
-  );
+  Widget _buildCrownWidget(String tier) {
+    Color crownColor;
+    switch (tier.toLowerCase()) {
+      case 'silver':
+        crownColor = const Color(0xFFC0C0C0);
+        break;
+      case 'gold':
+        crownColor = const Color(0xFFFFD700);
+        break;
+      case 'platinum':
+        crownColor = const Color(0xFFB0E0E6);
+        break;
+      default:
+        crownColor = Colors.grey;
+    }
+    return Icon(FontAwesomeIcons.crown, color: crownColor, size: 60);
+  }
 }
