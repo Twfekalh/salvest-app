@@ -75,38 +75,38 @@ abstract class AppRouter {
 
   static final router = GoRouter(
     routes: [
-      GoRoute(path: '/', builder: (context, state) => const LoginView()),
-      if (token != null)
-        GoRoute(
-          path: '/',
-          builder:
-              (context, state) => BlocProvider(
-                create:
-                    (context) => PropertiesForInvestmentBloc(
-                      getIt.get<SalePropertyRepoImpl>(),
-                    )..add(
-                      GetPropertiesForInvestmentsEvent(propertyType: 'vila'),
-                    ),
-                child: const HomePageView(),
-              ),
-        ),
-      if (token == null)
-        GoRoute(path: '/', builder: (context, state) => const LoginView()),
+      // GoRoute(path: '/', builder: (context, state) => const LoginView()),
+      // if (token != null)
+      //   GoRoute(
+      //     path: '/',
+      //     builder:
+      //         (context, state) => BlocProvider(
+      //           create:
+      //               (context) => PropertiesForInvestmentBloc(
+      //                 getIt.get<SalePropertyRepoImpl>(),
+      //               )..add(
+      //                 GetPropertiesForInvestmentsEvent(propertyType: 'vila'),
+      //               ),
+      //           child: const HomePageView(),
+      //         ),
+      //   ),
+      // if (token == null)
+      //   GoRoute(path: '/', builder: (context, state) => const LoginView()),
+      // GoRoute(
+      //   path: kHomePageView,
+      //   builder:
+      //       (context, state) => BlocProvider(
+      //         create:
+      //             (context) => PropertiesForInvestmentBloc(
+      //               getIt.get<SalePropertyRepoImpl>(),
+      //             )..add(
+      //               GetPropertiesForInvestmentsEvent(propertyType: 'vila'),
+      //             ),
+      //         child: const HomePageView(),
+      //       ),
+      // ),
       GoRoute(
-        path: kHomePageView,
-        builder:
-            (context, state) => BlocProvider(
-              create:
-                  (context) => PropertiesForInvestmentBloc(
-                    getIt.get<SalePropertyRepoImpl>(),
-                  )..add(
-                    GetPropertiesForInvestmentsEvent(propertyType: 'vila'),
-                  ),
-              child: const HomePageView(),
-            ),
-      ),
-      GoRoute(
-        path: kHomePageView,
+        path: '/',
         builder:
             (context, state) => BlocProvider(
               create:

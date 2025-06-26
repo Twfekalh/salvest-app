@@ -6,6 +6,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:salvest_app/business_logic/help%20bloc/help_bloc.dart';
+import 'package:salvest_app/business_logic/largest%20reward%20bloc/largest_reward_bloc.dart';
 import 'package:salvest_app/business_logic/property%20for%20investment%20bloc/properties_for_investment_bloc.dart';
 import 'package:salvest_app/business_logic/sale%20property%20bloc/sale_property_bloc.dart';
 import 'package:salvest_app/business_logic/send%20property%20bloc/send_property_bloc.dart';
@@ -14,6 +15,7 @@ import 'package:salvest_app/business_logic/user/bloc/user_bloc.dart';
 import 'package:salvest_app/business_logic/wallet%20bloc/wallet_bloc.dart';
 import 'package:salvest_app/data/services/auth%20services/auth_repo_impl.dart';
 import 'package:salvest_app/data/services/help%20services/help_repo_impl.dart';
+import 'package:salvest_app/data/services/largest%20reward%20services/largest_reward_repo_impl.dart';
 import 'package:salvest_app/data/services/property%20service/sale_property_repo_impl.dart';
 import 'package:salvest_app/data/services/wallet%20services/wallet_services_repo_impl.dart';
 import 'package:salvest_app/firebase/flutter_notifications.dart';
@@ -143,13 +145,13 @@ class _SalvestAppState extends State<SalvestApp> {
         BlocProvider(create: (context) => SalePropertyBloc()),
         BlocProvider(
           create:
-              (context) => LargestRewardBloc(getIt.get<LargestRewardRepoImpl>()),
+              (context) =>
+                  LargestRewardBloc(getIt.get<LargestRewardRepoImpl>()),
         ),
-          BlocProvider(
+        BlocProvider(
           create:
               (context) => SendPropertyBloc(getIt.get<SalePropertyRepoImpl>()),
         ),
-        
 
         BlocProvider(
           create: (context) => WalletBloc(getIt.get<WalletServicesRepoImpl>()),
