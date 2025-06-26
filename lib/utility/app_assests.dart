@@ -1,0 +1,39 @@
+class AppAssets {
+  static const walletICon = "assets/images/wallet.png";
+  static const tourIcon = "assets/images/tour.png";
+  static const property = "assets/images/property.png";
+  static const negotiationICon = "assets/images/negotiation.png";
+  static const messageIcon = "assets/images/message.png";
+  static const phoneIcon = "assets/images/phone.png";
+  static const photoICon = "assets/images/photo_icon.png";
+  static const editIcon = "assets/images/edit.png";
+  static const uploadIcon = "assets/images/upload_icon 1.png";
+  static const walletBackground = "assets/images/wallet_background.svg";
+  static const walletBackg = "assets/images/wallet_back.png";
+  static const investmentSvg = "assets/images/investment.svg";
+  static const investmentBlueSvg = "assets/images/investment_blue.png";
+  static const cashGreen = 'assets/images/cash_green.png';
+  static const cashGreenSvg = 'assets/images/cash_green.svg';
+  static const bedRoomImage = 'assets/images/bed_room_icon.png';
+  static const bathRoomIcon = 'assets/images/bathroom_icon.png';
+  static const balanceIcon = 'assets/images/balance.png';
+  static const highIncome = 'assets/images/high_incoming.png';
+  static const syriaFlag = 'assets/images/new_syria_flag.png';
+  static const homeIcon = 'assets/images/home.png';
+  static const profileIcon = 'assets/images/profile.png';
+  static const saleState = 'assets/images/sale_state.png';
+  static const questionMark = 'assets/images/question_mark.png';
+  static const settingICon = 'assets/images/setting.png';
+  static const logoutIcon = 'assets/images/logout.png';
+  static const walletWhite = 'assets/images/wallet_white.png';
+  static const certificateWhite = 'assets/images/certificate_white.png';
+  static const autoInvestment = 'assets/images/auto_investment.png';
+  static const chart = 'assets/images/Chart.png';
+  static const certificateGreen =
+      'assets/images/E-learning_certificate_green.png';
+  static const certificateBlue =
+      'assets/images/E-learning_certificate_blue.png';
+  static const appICnon = 'assets/images/app_icon.png';
+  static const emptyRequestsState = 'assets/images/Select-bro 1.png';
+  static const propertyIcon = 'assets/images/property_icon.png';
+}
