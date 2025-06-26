@@ -4,9 +4,9 @@ import 'package:dio/dio.dart';
 
 class APIConfig {
   static String baseUrl =
-  //'http://192.168.43.106:8000/';
+      //'http://192.168.43.106:8000/';
       // 'http://  192.168.137.147:8000';
-     Platform.isAndroid ? 'http://10.0.2.2:8000/' : 'http://127.0.0.1:8000/';
+      Platform.isAndroid ? 'http://10.0.2.2:8000/' : 'http://127.0.0.1:8000/';
   static const String signUpEndpoint = 'api/signup';
   static const String logInEndpoint = 'api/login';
   static const String sendVerificationCode = 'api/send_verification_code';
@@ -38,5 +38,4 @@ class APIConfig {
       'api/accept_Agreed_Negotiation_by_user/';
   static const String rejecttNegotiation =
       'api/reject_Agreed_Negotiation_by_user/';
-     
 }

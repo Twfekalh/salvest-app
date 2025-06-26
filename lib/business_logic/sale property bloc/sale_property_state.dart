@@ -215,35 +215,50 @@ class SalePropertyState {
     );
   }
 
-Future<FormData> toFormData() async {
-  final map = toMap();
-  
-  final formData = FormData.fromMap(map);
+  Future<FormData> toFormData() async {
+    final map = toMap();
 
-  // Add property images with array syntax
-  for (var file in images.where((f) => f.path.isNotEmpty)) {
-    formData.files.add(MapEntry(
-      'property_images[]',
-      await MultipartFile.fromFile(file.path, filename: file.path.split('/').last),
-    ));
+    final formData = FormData.fromMap(map);
+
+    // Add property images with array syntax
+    for (var file in images.where((f) => f.path.isNotEmpty)) {
+      formData.files.add(
+        MapEntry(
+          'property_images[]',
+          await MultipartFile.fromFile(
+            file.path,
+            filename: file.path.split('/').last,
+          ),
+        ),
+      );
+    }
+
+    // Add ID images with array syntax
+    for (var file in idImages.where((f) => f.path.isNotEmpty)) {
+      formData.files.add(
+        MapEntry(
+          'id_images[]',
+          await MultipartFile.fromFile(
+            file.path,
+            filename: file.path.split('/').last,
+          ),
+        ),
+      );
+    }
+
+    // Add property documents with array syntax
+    for (var file in propertyDocument.where((f) => f.path.isNotEmpty)) {
+      formData.files.add(
+        MapEntry(
+          'property_documents[]',
+          await MultipartFile.fromFile(
+            file.path,
+            filename: file.path.split('/').last,
+          ),
+        ),
+      );
+    }
+
+    return formData;
   }
-
-  // Add ID images with array syntax
-  for (var file in idImages.where((f) => f.path.isNotEmpty)) {
-    formData.files.add(MapEntry(
-      'id_images[]',
-      await MultipartFile.fromFile(file.path, filename: file.path.split('/').last),
-    ));
-  }
-
-  // Add property documents with array syntax
-  for (var file in propertyDocument.where((f) => f.path.isNotEmpty)) {
-    formData.files.add(MapEntry(
-      'property_documents[]',
-      await MultipartFile.fromFile(file.path, filename: file.path.split('/').last),
-    ));
-  }
-
-  return formData;
-}
 }

@@ -8,16 +8,16 @@ class DoubleLineChartCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 345,
-            height: 200,
-            decoration: ShapeDecoration(
-              gradient: AppColors.purple2Gradient,
-          //    color: const Color(0xFF9A8AEC),
-              shape: RoundedRectangleBorder(
-                side: BorderSide(width: 1, color: const Color(0x7F9A8AEC)),
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
+      width: 345,
+      height: 200,
+      decoration: ShapeDecoration(
+        gradient: AppColors.purple2Gradient,
+        //    color: const Color(0xFF9A8AEC),
+        shape: RoundedRectangleBorder(
+          side: BorderSide(width: 1, color: const Color(0x7F9A8AEC)),
+          borderRadius: BorderRadius.circular(20),
+        ),
+      ),
 
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -34,7 +34,8 @@ class DoubleLineChartCard extends StatelessWidget {
                     drawHorizontalLine: true,
                     horizontalInterval: 15,
                     getDrawingHorizontalLine:
-                        (value) => FlLine(color: Colors.black38, strokeWidth: 1),
+                        (value) =>
+                            FlLine(color: Colors.black38, strokeWidth: 1),
                     drawVerticalLine: false,
                   ),
                   titlesData: FlTitlesData(

@@ -15,6 +15,7 @@ import 'package:salvest_app/presentation/property%20details/widgets/property_inf
 import 'package:salvest_app/presentation/sale%20estate/widgets/custom_button.dart';
 import 'package:salvest_app/utility/dialogs_snackBar.dart';
 import 'package:salvest_app/utility/router.dart';
+
 class PropertyDetailsView extends StatefulWidget {
   const PropertyDetailsView({
     super.key,
@@ -49,6 +50,7 @@ class PropertyDetailsView extends StatefulWidget {
   @override
   State<PropertyDetailsView> createState() => _PropertyDetailsViewState();
 }
+
 class _PropertyDetailsViewState extends State<PropertyDetailsView> {
   bool _isAuthenticated = false;
   int _opportunityCount = 1; // Add this in your _PropertyDetailsViewState

@@ -15,7 +15,7 @@ Future<void> setCache(LogInResponse response) async {
     CacheHelper.setData(key: 'email', value: response.data!.email),
     CacheHelper.setData(key: 'name', value: response.data!.name),
     CacheHelper.setData(key: 'phone', value: response.data!.phone),
-    CacheHelper.setData(key: 'joinDate', value:response.data!.createdAt),
+    CacheHelper.setData(key: 'joinDate', value: response.data!.createdAt),
   ]);
 }
 

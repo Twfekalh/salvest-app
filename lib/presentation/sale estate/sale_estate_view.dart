@@ -30,7 +30,7 @@ class SaleEstateView extends StatelessWidget {
       listener: (context, state) {
         if (state is SendPropertyLoading) {
           EasyLoading.show(status: 'loading...');
-        }  
+        }
 
         if (state is SendPropertyStatus &&
             state.helperResponse.servicesResponse ==

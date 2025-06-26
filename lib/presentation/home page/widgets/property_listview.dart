@@ -73,8 +73,7 @@ class PropertyListView extends StatelessWidget {
                 onTap:
                     () => GoRouter.of(
                       context,
-                    ).push(AppRouter.kPropertyDetailsView,
-                    extra: property,),
+                    ).push(AppRouter.kPropertyDetailsView, extra: property),
                 child: PropertyCard(
                   title: property.area!,
                   location: property.state!,

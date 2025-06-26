@@ -15,15 +15,16 @@ class PropertiesForInvestmentBloc
     : super(PropertiesForInvestmentInitial()) {
     on<GetPropertiesForInvestmentsEvent>((event, emit) async {
       emit(PropertiesForInvestmentLoading());
-      final response = await salePropertyRepoImpl.getPropertiesForInvestment(event);
+      final response = await salePropertyRepoImpl.getPropertiesForInvestment(
+        event,
+      );
       if (response is GetProprtiesForInvestmentResponse) {
         emit(
           PropertiesForInvestmentSuccess(
             getPropertiesForInvestmentResponse: response,
           ),
         );
-      }
-      else {
+      } else {
         emit(PropertiesForInvestmentFailure(helperResponse: response));
       }
     });

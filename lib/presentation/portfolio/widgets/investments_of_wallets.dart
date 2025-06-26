@@ -12,7 +12,7 @@ class InvestmentsOfWallet extends StatelessWidget {
     return Container(
       width: 345,
       height: 200,
-      decoration: ShapeDecoration(  
+      decoration: ShapeDecoration(
         image: const DecorationImage(
           image: AssetImage(AppAssets.walletBackg),
           fit: BoxFit.fill,
@@ -53,9 +53,8 @@ class InvestmentsOfWallet extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       );
-                    }
-                    else {
-                        return Text(
+                    } else {
+                      return Text(
                         "failed to download",
                         style: TextStyle(
                           fontSize: 20,
