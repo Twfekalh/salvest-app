@@ -192,8 +192,13 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kCapitalGrowthView,
-        builder: (context, state) => const CapitalGrowthView(),
+        builder: (context, state) {
+          // يأخذ ال extra كنص
+          final modeName = state.extra as String? ?? 'Capital Growth';
+          return CapitalGrowthView(modeName: modeName);
+        },
       ),
+
       GoRoute(
         path: kPortfolioView,
         builder:

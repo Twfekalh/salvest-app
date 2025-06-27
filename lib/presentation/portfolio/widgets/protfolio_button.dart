@@ -53,7 +53,10 @@ class ProtfolioButtons extends StatelessWidget {
                 context.read<InvestmentModeBloc>().add(
                   FetchInvestmentModeEvent('Balanced'),
                 );
-                GoRouter.of(context).push(AppRouter.kCapitalGrowthView);
+                GoRouter.of(context).push(
+                  AppRouter.kCapitalGrowthView, // عدّل المسار إذا لزم
+                  extra: 'Balanced', // تمرير الـ mode كنص
+                );
               },
               child: ProtfolioItem(
                 gradient: AppColors.yellowGradient.withOpacity(0.6),
