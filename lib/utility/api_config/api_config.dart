@@ -38,6 +38,7 @@ class APIConfig {
       'api/accept_Agreed_Negotiation_by_user/';
   static const String rejecttNegotiation =
       'api/reject_Agreed_Negotiation_by_user/';
-
   static const String shoLargestReward = 'api/show_Largest_Reward';
+  static const String getPropertiesByInvestmentMode =
+      'api/get_Properties_By_InvestmentMode_for_user';
 }
