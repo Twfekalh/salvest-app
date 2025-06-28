@@ -26,7 +26,6 @@ class ProtfolioButtons extends StatelessWidget {
             // بطاقة Capital Growth
             InkWell(
               onTap: () {
-                // Capital Growth (مثال يشبه الرابط السابق)
                 context.read<InvestmentModeBloc>().add(
                   FetchInvestmentModeEvent('Capital Growth'),
                 );

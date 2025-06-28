@@ -41,4 +41,6 @@ class APIConfig {
   static const String shoLargestReward = 'api/show_Largest_Reward';
   static const String getPropertiesByInvestmentMode =
       'api/get_Properties_By_InvestmentMode_for_user';
+  static const String getInvestmentsByMonthAndYear =
+      'api/get_Investments_ByMonthAndYear';
 }

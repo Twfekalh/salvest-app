@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:salvest_app/data/services/Investment%20mode%20services/investment_mode_repo_impl.dart';
 import 'package:salvest_app/data/services/auth%20services/auth_repo_impl.dart';
 import 'package:salvest_app/data/services/help%20services/help_repo_impl.dart';
+import 'package:salvest_app/data/services/investments%20by%20month%20services/investments_by_month_repo_impl.dart';
 import 'package:salvest_app/data/services/largest%20reward%20services/largest_reward_repo_impl.dart';
 import 'package:salvest_app/data/services/negotiation%20services/negotiation_repo_imp.dart';
 import 'package:salvest_app/data/services/property%20service/sale_property_repo_impl.dart';
@@ -43,5 +44,8 @@ void setupServiceLocator() {
   );
   getIt.registerSingleton<InvestmentModeRepoImpl>(
     InvestmentModeRepoImpl(getIt.get<ApiService>()),
+  );
+  getIt.registerSingleton<InvestmentsByMonthRepoImpl>(
+    InvestmentsByMonthRepoImpl(getIt.get<ApiService>()),
   );
 }
