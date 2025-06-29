@@ -28,7 +28,8 @@ class CustomDrawer extends StatelessWidget {
                 icon: AppAssets.homeIcon,
                 title: 'Home',
                 onTap: () {
-                  Navigator.pop(context);
+                  // Navigator.pop(context);
+                  GoRouter.of(context).push(AppRouter.kHomePageView);
                 },
               ),
               DrawerItem(

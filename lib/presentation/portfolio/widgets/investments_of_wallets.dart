@@ -56,18 +56,6 @@ class InvestmentsOfWallet extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            Expanded(
-              child: Text(
-                'investments of your wallet\n',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
           ],
         ),
       ),

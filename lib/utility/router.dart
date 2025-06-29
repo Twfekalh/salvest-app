@@ -47,7 +47,7 @@ import 'package:salvest_app/presentation/wallet/widgets/stripe_payment.dart';
 import 'package:salvest_app/utility/service_locator.dart';
 
 abstract class AppRouter {
-  static const kHomePageView = '/homePageView';
+  static const kHomePageView = '/HomePageView';
   static const kProfileView = '/profileView';
   static const kHelpView = '/helpView';
   static const kNegotiationNotificationView = '/NegotiationNotificationView';

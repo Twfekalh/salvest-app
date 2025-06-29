@@ -78,7 +78,10 @@ class _PortfolioViewState extends State<PortfolioView> {
                 value: _selectedMonth,
                 isExpanded: true,
                 underline: const SizedBox(),
-                icon: const Icon(Icons.arrow_drop_down, color: Colors.black),
+                icon: const Icon(
+                  Icons.expand_circle_down_sharp,
+                  color: Color(0xFF574E86),
+                ),
                 onChanged: (value) {
                   if (value != null) {
                     setState(() => _selectedMonth = value);
@@ -92,7 +95,7 @@ class _PortfolioViewState extends State<PortfolioView> {
                         value: m,
                         child: Text(
                           m,
-                          style: const TextStyle(color: Colors.black),
+                          style: const TextStyle(color: Color(0xFF574E86)),
                         ),
                       );
                     }).toList(),
