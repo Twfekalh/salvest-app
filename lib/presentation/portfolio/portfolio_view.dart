@@ -122,7 +122,8 @@ class _PortfolioViewState extends State<PortfolioView> {
             ),
 
             const SizedBox(height: 20),
-            const DoubleLineChartCard(),
+            //اضافة للتذكير
+            const DoubleLineChartCard(year: 2025),
             const SizedBox(height: 20),
             Center(
               child: Container(
